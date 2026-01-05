@@ -90,3 +90,90 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 const animateElements = document.querySelectorAll('.animate-on-scroll');
 animateElements.forEach(el => observer.observe(el));
+
+
+/* --- Language Switcher Logic --- */
+const langOptions = document.querySelectorAll('.lang-opt');
+let currentLang = localStorage.getItem('site_lang') || 'en';
+
+// Initialize Language
+updateContent(currentLang);
+
+langOptions.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        if (lang !== currentLang) {
+            currentLang = lang;
+            updateContent(currentLang);
+        }
+    });
+});
+
+function updateContent(lang) {
+    // 1. Set Direction and Language Attribute
+    document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.lang = lang;
+
+    // 2. Update Text Content
+    const Elements = document.querySelectorAll('[data-i18n]');
+    Elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    // 3. Update Placeholders
+    const Placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+    Placeholders.forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            el.placeholder = translations[lang][key];
+        }
+    });
+
+    // 4. Update Button Active State
+    langOptions.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // 5. Save Preference
+    localStorage.setItem('site_lang', lang);
+}
+
+
+/* --- Contact Form Email Logic --- */
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+
+        // These IDs must be replaced by the user
+        const serviceID = 'YOUR_SERVICE_ID';
+        const templateID = 'YOUR_TEMPLATE_ID';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.textContent = 'Sent Successfully!';
+                btn.classList.add('btn-success'); // Optional success style
+                alert('Your message has been sent successfully!');
+                contactForm.reset();
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('btn-success');
+                }, 3000);
+            }, (err) => {
+                btn.textContent = 'Failed to Send';
+                alert('Failed to send message. Please try again later.\nError: ' + JSON.stringify(err));
+                console.error('EmailJS Error:', err);
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 3000);
+            });
+    });
+}

@@ -157,6 +157,45 @@ img {
     transition: var(--transition-speed);
 }
 
+/* Modern Language Switcher (Segmented Control) */
+.lang-switch-modern {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: 30px;
+}
+
+.mobile-lang {
+    display: none;
+}
+
+.desktop-lang {
+    display: flex;
+}
+
+.lang-opt {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: inherit;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.lang-opt:hover {
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.lang-opt.active {
+    background: var(--primary-color);
+    color: var(--bg-dark);
+}
+
 .logo-text {
     color: var(--primary-color);
     font-weight: 800;
@@ -393,23 +432,7 @@ img {
     font-weight: 300;
 }
 
-.read-more {
-    color: var(--primary-color);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.read-more i {
-    transition: 0.3s;
-}
-
-.read-more:hover i {
-    transform: translateX(5px);
-}
+/* .read-more removed */
 
 /* --- Hiring Banner --- */
 .hiring-banner {
@@ -858,5 +881,93 @@ img {
 
     .nav-link {
         font-size: 1.5rem;
+    }
+
+    .desktop-lang {
+        display: none;
+    }
+
+    .mobile-lang {
+        display: flex;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+}
+
+/* --- RTL Support (Arabic) --- */
+[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .lang-switch-modern {
+    margin-left: 0;
+    margin-right: 30px;
+}
+
+[dir="rtl"] .nav-list {
+    padding-right: 0;
+}
+
+[dir="rtl"] .service-card::before {
+    transform-origin: right;
+}
+
+[dir="rtl"] .btn i {
+    margin-right: 10px;
+    margin-left: 0;
+    transform: rotate(180deg);
+}
+
+/* .read-more RTL removed */
+
+[dir="rtl"] .exp-badge {
+    right: auto;
+    left: -20px;
+}
+
+[dir="rtl"] .checklist i {
+    margin-left: 10px;
+}
+
+[dir="rtl"] .contact-row {
+    flex-direction: row;
+}
+
+[dir="rtl"] .contact-row i {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+[dir="rtl"] .form-group input:focus,
+[dir="rtl"] .form-group textarea:focus {
+    padding-right: 10px;
+    padding-left: 0;
+}
+
+[dir="rtl"] .footer-socials {
+    margin-right: 0;
+}
+
+[dir="rtl"] .footer-links-group a:hover {
+    padding-right: 5px;
+    padding-left: 0;
+}
+
+[dir="rtl"] .footer-brand {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    [dir="rtl"] .nav-menu {
+        border-right: 1px solid #333;
+        border-left: none;
+        right: auto;
+        left: -100%;
+    }
+
+    [dir="rtl"] .nav-menu.active {
+        left: 0;
     }
 }
