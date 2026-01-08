@@ -92,54 +92,7 @@ const animateElements = document.querySelectorAll('.animate-on-scroll');
 animateElements.forEach(el => observer.observe(el));
 
 
-/* --- Language Switcher Logic --- */
-const langOptions = document.querySelectorAll('.lang-opt');
-let currentLang = localStorage.getItem('site_lang') || 'en';
 
-// Initialize Language
-updateContent(currentLang);
-
-langOptions.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-lang');
-        if (lang !== currentLang) {
-            currentLang = lang;
-            updateContent(currentLang);
-        }
-    });
-});
-
-function updateContent(lang) {
-    // 1. Set Direction and Language Attribute
-    document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    document.documentElement.lang = lang;
-
-    // 2. Update Text Content
-    const Elements = document.querySelectorAll('[data-i18n]');
-    Elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-        }
-    });
-
-    // 3. Update Placeholders
-    const Placeholders = document.querySelectorAll('[data-i18n-placeholder]');
-    Placeholders.forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) {
-            el.placeholder = translations[lang][key];
-        }
-    });
-
-    // 4. Update Button Active State
-    langOptions.forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-    });
-
-    // 5. Save Preference
-    localStorage.setItem('site_lang', lang);
-}
 
 
 /* --- Contact Form Email Logic --- */
@@ -177,3 +130,16 @@ if (contactForm) {
             });
     });
 }
+
+
+// Dynamic Year
+function setCurrentYear() {
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    } else {
+        console.error('Element #current-year not found');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', setCurrentYear);

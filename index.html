@@ -11,9 +11,7 @@
     <!-- Google Fonts: Outfit for a modern, tech approach -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,6 +26,8 @@
             emailjs.init("YOUR_PUBLIC_KEY"); // User to replace this
         })();
     </script>
+
+
 </head>
 
 <body>
@@ -42,24 +42,12 @@
 
             <nav class="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
-                    <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
-                    <li><a href="#about" class="nav-link" data-i18n="nav.about">About Us</a></li>
-                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-
-                <!-- Mobile Language Switcher -->
-                <div class="lang-switch-modern mobile-lang">
-                    <button class="lang-opt active" data-lang="en">EN</button>
-                    <button class="lang-opt" data-lang="ar">AR</button>
-                </div>
             </nav>
-
-            <!-- Desktop Language Switcher -->
-            <div class="lang-switch-modern desktop-lang">
-                <button class="lang-opt active" data-lang="en">EN</button>
-                <button class="lang-opt" data-lang="ar">AR</button>
-            </div>
 
             <div class="hamburger">
                 <div class="bar"></div>
@@ -73,15 +61,15 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1 class="hero-title animate-up"><span data-i18n="hero.title">Expert Technical Services</span> <br> <span
-                    class="highlight" data-i18n="hero.highlight">In Dubai</span>
+            <h1 class="hero-title animate-up"><span>Expert Technical Services</span> <br> <span class="highlight">In
+                    Dubai</span>
             </h1>
-            <p class="hero-subtitle animate-up delay-1" data-i18n="hero.subtitle">HVAC • Electrical • Plumbing •
+            <p class="hero-subtitle animate-up delay-1">HVAC • Electrical • Plumbing •
                 Carpentry • Masonry</p>
             <div class="hero-buttons animate-up delay-2">
-                <a href="#contact" class="btn btn-primary"><span data-i18n="hero.quote">Get a Quote</span> <i
+                <a href="#contact" class="btn btn-primary"><span>Get a Quote</span> <i
                         class="fa-solid fa-arrow-right"></i></a>
-                <a href="#services" class="btn btn-outline" data-i18n="hero.services">Our Services</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
             </div>
         </div>
 
@@ -95,9 +83,9 @@
         <div class="container">
             <div class="section-header text-center animate-on-scroll">
                 <div class="text-center">
-                    <h2 class="section-title" data-i18n="services.title">Our Expertise</h2>
+                    <h2 class="section-title">Our Expertise</h2>
                     <div class="section-line"></div>
-                    <p class="section-desc" data-i18n="services.desc">We are officially licensed by the Government of
+                    <p class="section-desc">We are officially licensed by the Government of
                         Dubai to provide a
                         comprehensive range of technical services.</p>
                 </div>
@@ -108,8 +96,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-building-shield"></i>
                         </div>
-                        <h3 data-i18n="services.building">Building Maintenance</h3>
-                        <p data-i18n="services.building.desc">Comprehensive building maintenance solutions for all types
+                        <h3>Building Maintenance</h3>
+                        <p>Comprehensive building maintenance solutions for all types
                             of properties.</p>
                     </div>
 
@@ -118,8 +106,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-faucet"></i>
                         </div>
-                        <h3 data-i18n="services.plumbing">Plumbing & Sanitary</h3>
-                        <p data-i18n="services.plumbing.desc">Professional installation of sanitary ware and plumbing
+                        <h3>Plumbing & Sanitary</h3>
+                        <p>Professional installation of sanitary ware and plumbing
                             systems.</p>
                     </div>
 
@@ -128,8 +116,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-paint-roller"></i>
                         </div>
-                        <h3 data-i18n="services.painting">Painting Contracting</h3>
-                        <p data-i18n="services.painting.desc">High-quality interior and exterior painting services.</p>
+                        <h3>Painting Contracting</h3>
+                        <p>High-quality interior and exterior painting services.</p>
                     </div>
 
                     <!-- Service 4: Electrical -->
@@ -137,8 +125,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-bolt"></i>
                         </div>
-                        <h3 data-i18n="services.electric">Electrical Fittings & Fixtures</h3>
-                        <p data-i18n="services.electric.desc">Repairing and maintenance of electrical fittings and
+                        <h3>Electrical Fittings & Fixtures</h3>
+                        <p>Repairing and maintenance of electrical fittings and
                             fixtures.</p>
                     </div>
 
@@ -147,8 +135,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-layer-group"></i>
                         </div>
-                        <h3 data-i18n="services.ceiling">False Ceiling & Partitions</h3>
-                        <p data-i18n="services.ceiling.desc">Installation of false ceilings and light partitions.</p>
+                        <h3>False Ceiling & Partitions</h3>
+                        <p>Installation of false ceilings and light partitions.</p>
                     </div>
 
                     <!-- Service 6: Wallpaper -->
@@ -156,8 +144,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-scroll"></i>
                         </div>
-                        <h3 data-i18n="services.wallpaper">Wallpaper Fixing Works</h3>
-                        <p data-i18n="services.wallpaper.desc">Professional wallpaper fixing and wall covering services.
+                        <h3>Wallpaper Fixing Works</h3>
+                        <p>Professional wallpaper fixing and wall covering services.
                         </p>
                     </div>
 
@@ -166,8 +154,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-fan"></i>
                         </div>
-                        <h3 data-i18n="services.ac">AC & Ventilation Systems</h3>
-                        <p data-i18n="services.ac.desc">Installation and maintenance of air-conditioning and air
+                        <h3>AC & Ventilation Systems</h3>
+                        <p>Installation and maintenance of air-conditioning and air
                             filtration systems.</p>
                     </div>
 
@@ -176,8 +164,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-hammer"></i>
                         </div>
-                        <h3 data-i18n="services.carpentry">Carpentry & Wood Flooring</h3>
-                        <p data-i18n="services.carpentry.desc">Expert carpentry works and wood flooring installation.
+                        <h3>Carpentry & Wood Flooring</h3>
+                        <p>Expert carpentry works and wood flooring installation.
                         </p>
                     </div>
 
@@ -186,8 +174,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-border-all"></i>
                         </div>
-                        <h3 data-i18n="services.tiling">Floor & Wall Tiling Works</h3>
-                        <p data-i18n="services.tiling.desc">Precision tiling works for floors and walls.</p>
+                        <h3>Floor & Wall Tiling Works</h3>
+                        <p>Precision tiling works for floors and walls.</p>
                     </div>
 
                     <!-- Service 10: Decoration -->
@@ -195,8 +183,8 @@
                         <div class="icon-box">
                             <i class="fa-solid fa-palette"></i>
                         </div>
-                        <h3 data-i18n="services.decoration">Decoration Design</h3>
-                        <p data-i18n="services.decoration.desc">Interior decoration design and implementation services.
+                        <h3>Decoration Design</h3>
+                        <p>Interior decoration design and implementation services.
                         </p>
                     </div>
                 </div>
@@ -208,17 +196,17 @@
         <div class="container">
             <div class="hiring-content">
                 <div class="hiring-text">
-                    <h2 data-i18n="hiring.title">Building Maintenance Specialist</h2>
-                    <p data-i18n="hiring.desc">Your trusted partner for comprehensive maintenance solutions in Dubai.
+                    <h2>Building Maintenance Specialist</h2>
+                    <p>Your trusted partner for comprehensive maintenance solutions in Dubai.
                     </p>
                     <ul class="job-list">
-                        <li data-i18n="hiring.job1">Maintenace</li>
-                        <li data-i18n="hiring.job2">Repair</li>
-                        <li data-i18n="hiring.job3">Installation</li>
-                        <li data-i18n="hiring.job4">Fit-out</li>
+                        <li>Maintenace</li>
+                        <li>Repair</li>
+                        <li>Installation</li>
+                        <li>Fit-out</li>
                     </ul>
                 </div>
-                <a href="#contact" class="btn btn-white" data-i18n="hero.quote">Get a Quote</a>
+                <a href="#contact" class="btn btn-white">Get a Quote</a>
             </div>
         </div>
     </section>
@@ -228,32 +216,31 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Technical Service">
+                    <img src="images/about-image.jpg" alt="Technical Service">
                     <div class="exp-badge">
-                        <span class="exp-number" data-i18n="about.badge1">100%</span>
-                        <span class="exp-text" data-i18n="about.badge2">Quality Work</span>
+                        <span class="exp-number">100%</span>
+                        <span class="exp-text">Quality Work</span>
                     </div>
                 </div>
                 <div class="about-content animate-on-scroll delay-1">
-                    <h4 class="sub-heading" data-i18n="about.sub">Who We Are</h4>
-                    <h2 class="section-title" data-i18n="about.title">Professional Technical Services</h2>
-                    <p class="section-desc" style="margin-bottom: 30px;" data-i18n="about.desc">
+                    <h4 class="sub-heading">Who We Are</h4>
+                    <h2 class="section-title">Professional Technical Services</h2>
+                    <p class="section-desc" style="margin-bottom: 30px;">
                         Alif Al Ameen Technical Service is a Dubai-based company dedicated to providing top-tier
                         maintenance and installation solutions. We are committed to quality, reliability, and excellence
                         in every project we undertake.
                     </p>
                     <ul class="checklist">
-                        <li><i class="fa-solid fa-check"></i> <span data-i18n="about.check1">Licensed Government of
+                        <li><i class="fa-solid fa-check"></i> <span>Licensed Government of
                                 Dubai Entity</span></li>
-                        <li><i class="fa-solid fa-check"></i> <span data-i18n="about.check2">24/7 Emergency
+                        <li><i class="fa-solid fa-check"></i> <span>24/7 Emergency
                                 Support</span></li>
-                        <li><i class="fa-solid fa-check"></i> <span data-i18n="about.check3">Skilled & Certified
+                        <li><i class="fa-solid fa-check"></i> <span>Skilled & Certified
                                 Technicians</span></li>
-                        <li><i class="fa-solid fa-check"></i> <span data-i18n="about.check4">Competitive Pricing</span>
+                        <li><i class="fa-solid fa-check"></i> <span>Competitive Pricing</span>
                         </li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 30px;" data-i18n="btn.contact">Contact
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 30px;">Contact
                         Us</a>
                 </div>
             </div>
@@ -264,9 +251,9 @@
     <section class="contact section-padding" id="contact">
         <div class="container">
             <div class="row">
-                <div class="section-title text-center" data-i18n="contact.title">Contact Us</div>
+                <div class="section-title text-center">Contact Us</div>
                 <div class="section-line"></div>
-                <p class="section-desc text-center" data-i18n="contact.desc">Need expert maintenance or installation?
+                <p class="section-desc text-center">Need expert maintenance or installation?
                     Get
                     professional technical support today.</p>
             </div>
@@ -274,14 +261,28 @@
             <div class="contact-wrapper">
                 <!-- Contact Info -->
                 <div class="contact-info animate-on-scroll">
+                    <!-- Item 0: Name -->
+                    <div class="contact-item">
+                        <div class="contact-row">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div class="info-text">
+                                <h3>Owner Name</h3>
+                                <p>NAGOORASAN, MEEYAKHAN</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="contact-item">
                         <div class="contact-row">
                             <div class="icon-circle">
                                 <i class="fa-solid fa-phone"></i>
                             </div>
                             <div class="info-text">
-                                <h3 data-i18n="contact.call">Call Us</h3>
-                                <p>+971 56 330 6854</p>
+                                <h3>Call Us</h3>
+                                <p>+971 56 330 6854, +971 56 563 6239</p>
+                                <p>+971 55 596 2827</p> <!-- Placeholder for second number -->
                             </div>
                         </div>
                     </div>
@@ -292,7 +293,7 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div class="info-text">
-                                <h3 data-i18n="contact.email">Email Us</h3>
+                                <h3>Email Us</h3>
                                 <p>alifalameentech.services2025@gmail.com</p>
                             </div>
                         </div>
@@ -304,8 +305,8 @@
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div class="info-text">
-                                <h3 data-i18n="contact.visit">Visit Us</h3>
-                                <p data-i18n="contact.address">White Swan Bldg 103, Trade Centre 1st,<br>Dubai, UAE</p>
+                                <h3>Visit Us</h3>
+                                <p>White Swan Bldg 103, Trade Centre 1st,<br>Dubai, UAE</p>
                             </div>
                         </div>
                     </div>
@@ -313,25 +314,21 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form animate-on-scroll delay-1">
-                    <h3 data-i18n="form.title">Send a Message</h3>
+                    <h3>Send a Message</h3>
                     <form id="contact-form">
                         <div class="form-group">
-                            <input type="text" name="user_name" placeholder="Your Name"
-                                data-i18n-placeholder="form.name" required>
+                            <input type="text" name="user_name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="user_email" placeholder="Your Email"
-                                data-i18n-placeholder="form.email" required>
+                            <input type="email" name="user_email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="form.subject"
-                                required>
+                            <input type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" data-i18n-placeholder="form.message"
-                                required></textarea>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" data-i18n="form.send">Send
+                        <button type="submit" class="btn btn-primary btn-block">Send
                             Message</button>
                     </form>
                 </div>
@@ -349,7 +346,7 @@
                         <span class="logo-text">Alif Al Ameen</span>
                         <i class="fa-solid fa-screwdriver-wrench logo-icon"></i>
                     </a>
-                    <p class="footer-tagline" data-i18n="footer.tagline">Licensed Maintenance & Technical Services in
+                    <p class="footer-tagline">Licensed Maintenance & Technical Services in
                         Dubai.</p>
                     <div class="social-links footer-socials">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -360,21 +357,24 @@
 
                 <!-- Links Section -->
                 <div class="footer-links-group">
-                    <h3 data-i18n="footer.quick_links">Quick Links</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
-                        <li><a href="#about" data-i18n="nav.about">About</a></li>
-                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Section -->
                 <div class="footer-contact-group">
-                    <h3 data-i18n="footer.get_in_touch">Get In Touch</h3>
+                    <h3>Get In Touch</h3>
                     <div class="contact-row">
                         <i class="fa-solid fa-phone"></i>
-                        <span>+971 56 330 6854</span>
+                        <div class="contact-number-group">
+                            <span>+971 56 330 6854, +971 56 563 6239</span>,<br>
+                            <span>+971 55 596 2827</span>
+                        </div>
                     </div>
                     <div class="contact-row">
                         <i class="fa-solid fa-envelope"></i>
@@ -382,18 +382,18 @@
                     </div>
                     <div class="contact-row">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span data-i18n="contact.address">White Swan Bldg 103, Dubai, UAE</span>
+                        <span>White Swan Bldg 103, Trade Centre 1st,<br>Dubai, UAE</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p data-i18n="footer.rights">&copy; 2026 Alif Al Ameen Technical Service. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year"></span> Alif Al Ameen Technical Service. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="translations.js"></script>
+
     <script src="script.js"></script>
 </body>
 

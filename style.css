@@ -157,50 +157,7 @@ img {
     transition: var(--transition-speed);
 }
 
-/* Modern Language Switcher (Segmented Control) */
-.lang-switch-modern {
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--primary-color);
-    border-radius: 20px;
-    overflow: hidden;
-    margin-left: 30px;
-}
 
-.mobile-lang {
-    display: none;
-}
-
-.desktop-lang {
-    display: flex;
-}
-
-.lang-opt {
-    background: transparent;
-    border: none;
-    color: var(--primary-color);
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    font-family: inherit;
-    transition: 0.3s;
-    font-weight: 600;
-}
-
-.lang-opt:hover {
-    background: rgba(212, 175, 55, 0.2);
-}
-
-.lang-opt.active {
-    background: var(--primary-color);
-    color: var(--bg-dark);
-}
-
-.logo-text {
-    color: var(--primary-color);
-    font-weight: 800;
-    /* Bolder for visibility */
-}
 
 .nav-container {
     display: flex;
@@ -390,9 +347,11 @@ img {
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.15);
+    /* Gold Glow */
 }
 
 .service-card:hover::before {
@@ -409,12 +368,15 @@ img {
     color: var(--primary-color);
     font-size: 1.5rem;
     margin-bottom: 25px;
-    transition: 0.3s;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy transition */
 }
 
 .service-card:hover .icon-box {
     background-color: var(--primary-color);
     color: var(--bg-dark);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
 .service-card h3 {
@@ -597,6 +559,17 @@ img {
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
+/* Ensure icon sits on top and animates smoothly */
+.contact-item .icon-circle i {
+    position: relative;
+    z-index: 5;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover .icon-circle i {
+    color: var(--bg-dark) !important;
+}
+
 .info-text h3 {
     margin-bottom: 8px;
     font-size: 1.2rem;
@@ -730,7 +703,8 @@ img {
 
 .footer-links-group {
     flex: 1;
-    min-width: 200px;
+    min-width: 150px;
+    /* Increased from 50px to prevent squashing */
 }
 
 .footer-links-group h3,
@@ -761,7 +735,8 @@ img {
 
 .footer-contact-group {
     flex: 1.2;
-    min-width: 280px;
+    min-width: 250px;
+    /* Reduced from 320px for better fit */
 }
 
 .contact-row {
@@ -883,91 +858,5 @@ img {
         font-size: 1.5rem;
     }
 
-    .desktop-lang {
-        display: none;
-    }
 
-    .mobile-lang {
-        display: flex;
-        margin-left: 0;
-        margin-top: 30px;
-    }
-}
-
-/* --- RTL Support (Arabic) --- */
-[dir="rtl"] body {
-    direction: rtl;
-    text-align: right;
-    font-family: 'Tajawal', sans-serif;
-}
-
-[dir="rtl"] .lang-switch-modern {
-    margin-left: 0;
-    margin-right: 30px;
-}
-
-[dir="rtl"] .nav-list {
-    padding-right: 0;
-}
-
-[dir="rtl"] .service-card::before {
-    transform-origin: right;
-}
-
-[dir="rtl"] .btn i {
-    margin-right: 10px;
-    margin-left: 0;
-    transform: rotate(180deg);
-}
-
-/* .read-more RTL removed */
-
-[dir="rtl"] .exp-badge {
-    right: auto;
-    left: -20px;
-}
-
-[dir="rtl"] .checklist i {
-    margin-left: 10px;
-}
-
-[dir="rtl"] .contact-row {
-    flex-direction: row;
-}
-
-[dir="rtl"] .contact-row i {
-    margin-left: 15px;
-    margin-right: 0;
-}
-
-[dir="rtl"] .form-group input:focus,
-[dir="rtl"] .form-group textarea:focus {
-    padding-right: 10px;
-    padding-left: 0;
-}
-
-[dir="rtl"] .footer-socials {
-    margin-right: 0;
-}
-
-[dir="rtl"] .footer-links-group a:hover {
-    padding-right: 5px;
-    padding-left: 0;
-}
-
-[dir="rtl"] .footer-brand {
-    text-align: right;
-}
-
-@media (max-width: 768px) {
-    [dir="rtl"] .nav-menu {
-        border-right: 1px solid #333;
-        border-left: none;
-        right: auto;
-        left: -100%;
-    }
-
-    [dir="rtl"] .nav-menu.active {
-        left: 0;
-    }
 }
