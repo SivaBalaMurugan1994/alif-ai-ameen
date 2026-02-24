@@ -39,13 +39,13 @@ navLinks.forEach(link => {
 // Sticky Header Effect
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.3)';
-        header.style.background = 'rgba(10, 10, 10, 0.98)';
-        header.style.borderBottom = '1px solid rgba(212, 175, 55, 0.3)';
+        header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+
+        header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)';
     } else {
         header.style.boxShadow = 'none';
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
-        header.style.borderBottom = '1px solid rgba(212, 175, 55, 0.2)';
+
+        header.style.borderBottom = 'none';
     }
 });
 
@@ -75,7 +75,7 @@ window.addEventListener('scroll', () => {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2 // Trigger when 20% visible
+    threshold: 0.1 // Trigger when 10% visible
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
@@ -106,24 +106,22 @@ if (contactForm) {
         const originalText = btn.textContent;
         btn.textContent = 'Sending...';
 
-        // These IDs must be replaced by the user
-        const serviceID = 'YOUR_SERVICE_ID';
-        const templateID = 'YOUR_TEMPLATE_ID';
-
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
+        // parameters: service_id, template_id, template_params
+        // We use .sendForm because it automatically grabs all inputs by 'name'
+        emailjs.sendForm('service_3zia7ub', 'template_ly50xwj', this)
+            .then(function () {
                 btn.textContent = 'Sent Successfully!';
-                btn.classList.add('btn-success'); // Optional success style
-                alert('Your message has been sent successfully!');
+                btn.classList.add('btn-success');
+                showToast('Your message has been sent successfully!', 'success');
                 contactForm.reset();
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.classList.remove('btn-success');
                 }, 3000);
-            }, (err) => {
+            }, function (error) {
                 btn.textContent = 'Failed to Send';
-                alert('Failed to send message. Please try again later.\nError: ' + JSON.stringify(err));
-                console.error('EmailJS Error:', err);
+                showToast('Failed to send message. Please try again later.', 'error');
+                console.error('Submission Error:', error);
                 setTimeout(() => {
                     btn.textContent = originalText;
                 }, 3000);
@@ -140,6 +138,39 @@ function setCurrentYear() {
     } else {
         console.error('Element #current-year not found');
     }
+}
+
+
+/* --- Toast Notification Helper --- */
+function showToast(message, type = 'success') {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+
+    // Icons based on type
+    const icon = type === 'success' ? '<i class="fa-solid fa-check-circle toast-icon"></i>' : '<i class="fa-solid fa-circle-exclamation toast-icon"></i>';
+
+    toast.innerHTML = `${icon}<span class="toast-message">${message}</span>`;
+
+    container.appendChild(toast);
+
+    // Trigger reflow for animation
+    void toast.offsetWidth;
+    toast.classList.add('show');
+
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 400); // Wait for transition
+    }, 4000);
 }
 
 document.addEventListener('DOMContentLoaded', setCurrentYear);
